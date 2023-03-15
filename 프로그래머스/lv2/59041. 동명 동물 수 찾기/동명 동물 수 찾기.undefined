@@ -1,0 +1,9 @@
+select NAME, count(name) as COUNT 
+from animal_ins 
+group by name 
+having count(name) >= 2
+order by name;
+
+# select NAME, count(name) as COUNT 
+# from animal_ins 
+# where 2 >
