@@ -1,0 +1,39 @@
+-- 코드를 입력하세요
+-- 출력 : 식품분류(CATEGORY)별로 가격이 가장 비싼 식품 조회
+--     : 과자 국 김치 식용유일 경우만 출력
+-- 정렬 : 식품 가격 기준으로 내림차순
+
+# SELECT CATEGORY, MAX(PRICE) AS MAX_PRICE, PRODUCT_NAME
+# FROM FOOD_PRODUCT
+# WHERE PRODUCT_NAME IN (SELECT PRODUCT_NAME
+#                        FROM FOOD_PRODUCT
+#                        WHERE CATEGORY IN ('식용유', '김치', '국', '과자')
+#                        GROUP BY CATEGORY
+#                        ORDER BY PRICE DESC);
+/*
+SELECT MAX(PRICE), PRODUCT_NAME
+FROM FOOD_PRODUCT
+WHERE CATEGORY IN ('식용유', '김치', '국', '과자')
+GROUP BY CATEGORY
+ORDER BY PRICE DESC;
+
+SELECT MAX(PRICE), PRODUCT_NAME, PRICE
+FROM FOOD_PRODUCT
+WHERE CATEGORY IN ('식용유', '김치', '국', '과자')
+ORDER BY PRICE DESC;*/
+
+SELECT CATEGORY, PRICE AS MAX_PRICE, PRODUCT_NAME
+FROM FOOD_PRODUCT
+WHERE (CATEGORY, PRICE) IN (SELECT CATEGORY, MAX(PRICE)
+                            FROM FOOD_PRODUCT 
+                            WHERE CATEGORY IN ('식용유', '김치', '국', '과자')
+                            GROUP BY CATEGORY)
+ORDER BY PRICE DESC;
+
+/*
+SELECT CATEGORY, MAX(PRICE) AS MAX_PRICE, PRODUCT_NAME
+FROM FOOD_PRODUCT
+WHERE CATEGORY IN ('식용유', '김치', '국', '과자')
+GROUP BY CATEGORY
+ORDER BY PRICE DESC;
+*/
