@@ -22,3 +22,4 @@
 
  <p>입력받은 그대로 출력한다.</p>
 
+![image](https://user-images.githubusercontent.com/107450834/226371805-b33a8e88-7fdf-45da-adee-e7c7f07fb06b.png)
