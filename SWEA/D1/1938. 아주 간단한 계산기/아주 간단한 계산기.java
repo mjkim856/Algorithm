@@ -8,7 +8,10 @@ class Solution
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        System.out.printf("%d\n%d\n%d\n%d", a+b, a-b, a*b, a/b);
+        System.out.println(a+b);
+        System.out.println(a-b);
+        System.out.println(a*b);
+        System.out.println(a/b);
         sc.close();
     }
 }
