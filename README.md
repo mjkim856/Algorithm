@@ -3,7 +3,7 @@
 <br><br><br>
 
 # 설명
-- 기간: 2023.03.13
+- 기간: 2023.03.13 ~
 - 사이트: BOJ, Programmers, SWEA, CodeTree
 - 언어: Java
 <br><br><br>
