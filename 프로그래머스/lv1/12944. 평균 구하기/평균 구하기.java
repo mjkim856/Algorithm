@@ -3,8 +3,12 @@ class Solution {
         double answer = 0;
         double sum = 0;
 
-        for(int a:arr) {
-            sum += a;
+        if(arr.length == 0 || arr == null) {
+            answer = 0;
+        } else {
+            for(int a:arr) {
+                sum += a;
+            }
         }
         
         return sum/arr.length;
