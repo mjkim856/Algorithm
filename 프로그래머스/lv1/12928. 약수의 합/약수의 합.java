@@ -3,7 +3,7 @@ class Solution {
         int answer = 0;
         int i = 1;
         
-        while(i <= n) {
+        while(i <= n/2) {
             if(n%i == 0) {
                 answer += i;
             }
@@ -11,13 +11,13 @@ class Solution {
         }
         
         /*
-        for(int i = 1; i <= n; i++) {
+        for(int i = 1; i <= n/2; i++) {
             if(n%i == 0) {
                 answer += i;
             }
         }
         */
         
-        return answer;
+        return answer + n;
     }
 }
