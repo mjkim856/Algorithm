@@ -3,6 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String args[]) throws IOException {
         // BufferedReader, for, while 사용!
+        // 특이점 : while이 메모리도 시간도 적게 들어간다.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int a = Integer.parseInt(br.readLine());
 
