@@ -1,3 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Queue<Integer> q = new LinkedList<>();
+
+        for (int i = 1; i <= 10; i++) {
+            br.readLine();
+            q.clear();
+
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            for (int j = 0; j < 8; j++) {
+                q.add(Integer.parseInt(st.nextToken()));
+            }
+
+            int minus = 1;
+
+            while(true) {
+                if(minus > 5) {
+                    minus = 1;
+                }
+                int temp = q.poll() - minus++;
+                if(temp <= 0) {
+                    q.add(0);
+                    break;
+                }
+                q.add(temp);
+            }
+            
+            System.out.print("#" + i + " ");
+            for (int j = 0; j < 8; j++) {
+                System.out.print(q.poll() + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+-
+
 import java.util.*;
 import java.io.*;
 
