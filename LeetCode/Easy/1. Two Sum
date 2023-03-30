@@ -36,9 +36,8 @@ ______________________________________________________________________
 // map.put을 원래 for문 위로 올렸는데, 그렇게 하니까 6(3+3) 이런 식으로 동일수를 더하는 경우는 0, 0이 출력됐다.
 // 이래서 마지막 예제가 3, 3인가 싶기도 하고 ^_^ ... 2+4 이런 경우는 잘 동작했었음.
 // 대체 LeetHub는 왜 작동을 하지 않는 것인가!
-// Time complexity: O(n^2) For each element, we try to find its complement by looping through the rest of the array which takes O(n) time. Therefore, the time complexity is O(n^2).
-// Space complexity: O(1). The space required does not depend on the size of the input array, so only constant space is used.
-
+// Time complexity: O(n). We traverse the list containing n elements only once. Each lookup in the table costs only O(1) time.
+// Space complexity: O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -53,8 +52,8 @@ class Solution {
 }
 
 // 가장 Simple하게 접근 가능한 BruteForce 방식이다.
-// Time complexity: O(n). We traverse the list containing n elements only once. Each lookup in the table costs only O(1) time.
-// Space complexity: O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
+// Time complexity: O(n^2) For each element, we try to find its complement by looping through the rest of the array which takes O(n) time. Therefore, the time complexity is O(n^2).
+// Space complexity: O(1). The space required does not depend on the size of the input array, so only constant space is used.
 // class Solution {
 //     public int[] twoSum(int[] nums, int target) {
 //         int len = nums.length;
