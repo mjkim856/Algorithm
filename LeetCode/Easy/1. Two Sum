@@ -1,0 +1,70 @@
+1. Two Sum
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
+
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+Example 2:
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+Example 3:
+
+Input: nums = [3,3], target = 6
+Output: [0,1]
+ 
+Constraints:
+2 <= nums.length <= 104
+-109 <= nums[i] <= 109
+-109 <= target <= 109
+Only one valid answer exists.
+
+
+Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+______________________________________________________________________
+
+
+// hashmap을 사용하여 푼다.
+// 머야 LeetCode 생각보다 어렵잖아?
+// map.put을 원래 for문 위로 올렸는데, 그렇게 하니까 6(3+3) 이런 식으로 동일수를 더하는 경우는 0, 0이 출력됐다.
+// 이래서 마지막 예제가 3, 3인가 싶기도 하고 ^_^ ... 2+4 이런 경우는 잘 동작했었음.
+// 대체 LeetHub는 왜 작동을 하지 않는 것인가!
+// Time complexity: O(n^2) For each element, we try to find its complement by looping through the rest of the array which takes O(n) time. Therefore, the time complexity is O(n^2).
+// Space complexity: O(1). The space required does not depend on the size of the input array, so only constant space is used.
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++) {
+            if(map.containsKey(target - nums[i])) {
+                return new int[]{map.get(target - nums[i]), i};
+            }
+            map.put(nums[i], i);
+        }
+        return null;
+    }
+}
+
+// 가장 Simple하게 접근 가능한 BruteForce 방식이다.
+// Time complexity: O(n). We traverse the list containing n elements only once. Each lookup in the table costs only O(1) time.
+// Space complexity: O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
+// class Solution {
+//     public int[] twoSum(int[] nums, int target) {
+//         int len = nums.length;
+//         for(int i = 0; i < len; i++) {
+//             for(int j = i+1; j < len; j++) {
+//                 if(nums[i] + nums[j] == target) {
+//                     return new int[]{i, j};
+//                 }
+//             }
+//         }
+//         return null;
+//     }
+// }
