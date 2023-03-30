@@ -2,6 +2,44 @@ import java.util.*;
 import java.io.*;
 
 public class Solution {
+	static int n;
+	static String[] arr;
+
+	public static void inOrder(int idx) {
+		if (idx*2 <= n) inOrder(idx*2);
+		System.out.print(arr[idx]);
+		if (idx*2+1 <= n) inOrder(idx*2+1);
+	}
+
+	public static void main(String args[]) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+
+		for(int i = 0; i < 10; i++) {
+		n = Integer.parseInt(br.readLine());
+		arr = new String[n+1];
+			
+			for(int j = 0; j < n; j++) {
+				String str = br.readLine();
+				st = new StringTokenizer(str, " ");
+				arr[Integer.parseInt(st.nextToken())] = st.nextToken();
+			}
+
+		System.out.printf("#%d ", i+1);
+		inOrder(1);
+		System.out.println();
+		}
+	}
+}
+
+-
+	
+주석 있는 버전
+
+import java.util.*;
+import java.io.*;
+
+public class Solution {
 	// class에서 사용할 staic함수를 선언한다.
 	static int n;
 	static String[] arr;
