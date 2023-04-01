@@ -8,7 +8,6 @@ class Main {
 	public static void main(String args[]) throws IOException {
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        double sum = 0;
         
         String[] str = br.readLine().split(" ");
         ArrayList<Double> arr = new ArrayList<>();
@@ -19,13 +18,10 @@ class Main {
         
         Collections.sort(arr);
         double max = arr.get(n-1);
-        
-	    for(int i = 0; i < n; i++) {
-            arr.set(i, arr.get(i)/max*100);
-	    }
+        double sum = 0;
         
         for(int i = 0; i < n; i++) {
-            sum += arr.get(i);
+            sum += arr.get(i)/max*100;
 	    }
         
         System.out.print(sum/n);
