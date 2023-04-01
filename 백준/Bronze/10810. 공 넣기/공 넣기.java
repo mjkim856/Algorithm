@@ -44,22 +44,23 @@ import java.io.*;
 class Main {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] nm = br.readLine().split(" ");
-        int n = Integer.parseInt(nm[0]);
-        int m = Integer.parseInt(nm[1]);
+
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int m = Integer.parseInt(st1.nextToken());
         int[] arr = new int[n+1];
-        
+
         for(int i = 0; i < m; i++) {
-            String[] str = br.readLine().split(" ");
-            int start = Integer.parseInt(str[0]);
-            int end = Integer.parseInt(str[1]);
-            int num = Integer.parseInt(str[2]);
-            
+            StringTokenizer st2 = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(st2.nextToken());
+            int end = Integer.parseInt(st2.nextToken());
+            int num = Integer.parseInt(st2.nextToken());
+
             for(int j = start; j <= end; j++) {
                 arr[j] = num;
-            }     
+            }
         }
-        
+
         StringBuilder sb = new StringBuilder();
         for(int i = 1; i < arr.length; i++) {
             sb.append(arr[i] + " ");
