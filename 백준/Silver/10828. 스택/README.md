@@ -1,5 +1,9 @@
 # [Silver IV] 스택 - 10828 
 
+<img width="635" alt="image" src="https://user-images.githubusercontent.com/107450834/229305390-d1fa33c2-827f-40b0-99bf-1047460f2a9b.png">
+
+
+
 [문제 링크](https://www.acmicpc.net/problem/10828) 
 
 ### 성능 요약
