@@ -35,3 +35,36 @@ class Main {
         System.out.print(sb);
     }
 }
+
+-
+    
+import java.util.*;
+import java.io.*;
+
+class Main {
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] nm = br.readLine().split(" ");
+        int n = Integer.parseInt(nm[0]);
+        int m = Integer.parseInt(nm[1]);
+        int[] arr = new int[n+1];
+        
+        for(int i = 0; i < m; i++) {
+            String[] str = br.readLine().split(" ");
+            int start = Integer.parseInt(str[0]);
+            int end = Integer.parseInt(str[1]);
+            int num = Integer.parseInt(str[2]);
+            
+            for(int j = start; j <= end; j++) {
+                arr[j] = num;
+            }     
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1; i < arr.length; i++) {
+            sb.append(arr[i] + " ");
+        }
+        
+        System.out.print(sb);
+    }
+}
