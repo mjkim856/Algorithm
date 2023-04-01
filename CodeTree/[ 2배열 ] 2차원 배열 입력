@@ -1,0 +1,47 @@
+import java.util.*;
+
+// 2차원 배열 연습
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 4x4의 크기를 가지는 2차원 배열 선언
+        int[][] arrt1 = new int[4][4];
+
+        // 4x4의 크기를 가지는 2차원 배열에 값까지 초기화하기
+        int[][] arrt2 = new int[][]{ {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16} };
+
+        // 값 확인하기
+        // 1행 1열 = 6
+        System.out.println(arrt2[1][1]);
+        // 2행 3열 = 12
+        System.out.println(arrt2[2][3]);
+
+
+        // __________________________________________________________________________________________
+
+
+
+        // 2차원 배열에 입력받고 출력하는 코드
+        int[][] arrt3 = new int[4][4];
+
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                arrt3[i][j] = sc.nextInt();            
+            }
+        }
+
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                System.out.print(arrt3[i][j] + " ");            
+            }
+            System.out.println();
+        } 
+        
+        // 1 2 3 4
+        // 5 6 7 8
+        // 9 10 11 12
+        // 13 14 15 16
+        // 의 형태로 출력된다.
+    }
+}
