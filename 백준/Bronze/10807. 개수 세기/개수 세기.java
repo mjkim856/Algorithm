@@ -1,0 +1,23 @@
+// 첫째 줄은 정수 갯수(N), 둘째 줄은 공백으로 구분된 정수, 셋째 줄은 찾으려는 정수(v)가 주어진다.
+// v의 갯수를 찾기 위해 cnt 변수를 정의하여 사용한다.
+import java.util.*;
+import java.io.*;
+
+class Main{
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        String v = br.readLine();
+        int cnt = 0;
+        StringTokenizer st = new StringTokenizer(str, " ");
+        
+        while(st.hasMoreTokens()) {
+            if(st.nextToken().equals(v)) {
+                cnt++;
+            }
+        }
+        
+        System.out.print(cnt);
+    }
+}
