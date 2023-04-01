@@ -1,5 +1,10 @@
 # [Bronze V] X보다 작은 수 - 10871 
 
+<img width="366" alt="image" src="https://user-images.githubusercontent.com/107450834/229272504-ccf37dac-0ff9-4821-89af-b840c7916142.png">
+시간을 엄청 줄였당. 뿌듯해!!!
+Scanner와 sout 사용 -> BufferedReader와 StringBuilder 사용
+
+
 [문제 링크](https://www.acmicpc.net/problem/10871) 
 
 ### 성능 요약
