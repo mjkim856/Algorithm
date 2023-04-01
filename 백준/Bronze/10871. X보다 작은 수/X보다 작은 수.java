@@ -2,19 +2,23 @@
 // 출력 형식 : 1 2 3 4
 
 import java.util.*;
+import java.io.*;
+
 class Main{
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int x = sc.nextInt();
-        sc.nextLine();
+    public static void main(String args[]) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int x = Integer.parseInt(st1.nextToken());
         
+        StringTokenizer st2 = new StringTokenizer(br.readLine());
         for(int i = 0; i < n; i++) {
-            int a = sc.nextInt();
+            int a = Integer.parseInt(st2.nextToken());
             if(a < x) {
-                System.out.print(a + " ");
+                sb.append(a + " ");
             }
         }
+        System.out.print(sb.toString());
     }
-    
 }
