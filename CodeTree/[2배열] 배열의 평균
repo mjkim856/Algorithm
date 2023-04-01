@@ -1,0 +1,82 @@
+숫자로 이루어진 2행 4열의 배열이 주어지면 가로 평균, 세로 평균, 전체 평균을 소수 첫째 자리까지만 출력하는 프로그램을 작성해보세요.
+
+입력 형식
+숫자로 이루어진 2행 4열의 배열이 공백을 사이에 두고 주어집니다.
+
+1 ≤ 숫자 ≤ 100
+출력 형식
+첫 번째 줄에는 가로 평균을 ,
+
+두 번째 줄에는 세로 평균을,
+
+마지막 줄에는 전체 평균을 출력합니다. 모든 수 사이에 공백을 두고, 소수 첫째 자리까지만 출력합니다.
+
+입출력 예제
+예제1
+입력:
+10 20 30 40
+50 60 70 80
+
+출력:
+25.0 65.0
+30.0 40.0 50.0 60.0
+45.0
+
+제한
+시간 제한: 1000ms
+메모리 제한: 80MB
+
+--------------------------------------------------------------
+
+// ^ㅁ^ ... 쉽지 않넹
+import java.util.*;
+
+public class Main{
+	public static void main(String args[]){
+	    Scanner sc = new Scanner(System.in);
+		int sum = 0;
+
+		int[][] arrt = new int[2][4];
+
+		// 배열에 값 넣기
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 4; j++) {
+				arrt[i][j] = sc.nextInt();
+			}
+		}
+
+		// 주의! 소수점 첫째 자리까지만 출력!
+		// System.out.printf("%.1f ", );
+
+		// 가로 평균 구하기
+		for(int i = 0; i < 2; i++) {
+			sum = 0;
+			for(int j = 0; j < 4; j++) {
+				sum += arrt[i][j];
+			}
+			System.out.printf("%.1f ", (double)sum/4);
+		}		
+
+		System.out.println();
+
+		// 세로 평균 구하기
+		for(int i = 0; i < 4; i++) {
+			sum = 0;
+			for(int j = 0; j < 2; j++) {
+				sum += arrt[j][i];
+			}
+			System.out.printf("%.1f ", (double)sum/2);
+		}		
+
+		System.out.println();
+
+		// 전체 평균 구하기
+		sum = 0;
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 4; j++) {
+				sum += arrt[i][j];
+			}
+		}		
+	    System.out.printf("%.1f ", (double)sum/8);
+	}
+}
