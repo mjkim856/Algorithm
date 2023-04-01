@@ -1,0 +1,52 @@
+https://www.codetree.ai/missions/4/problems/sum-of-array/description
+
+4개의 줄에 각 줄마다 4개의 정수가 주어집니다. 줄의 합을 구하는 프로그램을 배열을 사용하여 작성해보세요.
+
+입력 형식: 각 줄마다 4개의 정수가 공백을 사이에 두고 주어집니다.
+0 ≤ 정수 ≤ 100
+
+출력 형식: 4개의 줄에 각 줄의 합을 출력합니다.
+
+입출력 예제
+예제1
+입력:
+1 2 3 4
+7 8 9 10
+11 12 13 14
+15 16 17 18
+
+출력:
+10
+34
+50
+66
+
+제한
+시간 제한: 1000ms
+메모리 제한: 80MB
+
+------------------------------------------------
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[][] arrt = new int[4][4];
+
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                arrt[i][j] = sc.nextInt();         
+            }
+        }     
+
+        for(int i = 0; i < 4; i++) {
+            int sum = 0;
+            for(int j = 0; j < 4; j++) {
+                sum += arrt[i][j];         
+            }
+            System.out.println(sum);    
+        } 
+    }
+}
