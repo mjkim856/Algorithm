@@ -1,0 +1,60 @@
+https://www.codetree.ai/missions/4/problems/sum-of-specific-elements/description
+
+4 x 4 크기의 격자에 정수가 하나씩 주어져있습니다. 이 정수들 중 다음 그림에서 색칠된 칸들에 해당하는 정수의 합을 2차원 배열을 통해 구하는 프로그램을 작성해보세요.
+
+입력 형식
+첫 번째 줄부터 4개의 줄에 걸쳐, 한 줄에 4개씩 정수가 공백을 두고 주어집니다.
+1 ≤ 주어지는 정수 ≤ 100
+
+출력 형식
+첫 번째 줄에 색칠된 칸에 해당하는 정수들의 합을 출력합니다.
+(아래에서 ㅁ 부분만 합치라느 뜻)
+
+ㅁㅇㅇㅇ
+ㅁㅁㅇㅇ
+ㅁㅁㅁㅇ
+ㅁㅁㅁㅁ
+
+
+입출력 예제
+예제1
+입력:
+3 3 54 5
+2 6 7 81
+3 31 2 1
+95 5 7 1
+
+출력:
+155
+
+예제 설명
+예제 1번에서, 색칠된 부분의 합은 3 + 2 + 6 + 3 + 31 + 2 + 95 + 5 + 7 + 1 = 155 입니다.
+
+제한
+시간 제한: 1000ms
+메모리 제한: 80MB
+
+-
+
+import java.util.*;
+
+public class Main {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int[][] arrt = new int[4][4];
+
+        for(int i = 0; i < 4; i++) {
+            for(int j = 0; j < 4; j++) {
+                arrt[i][j] = sc.nextInt();
+            }
+        }
+
+		    for(int i = 0; i < arrt.length; i++) {
+            for(int j = 0; j <= i; j++) {
+                sum += arrt[i][j];
+		        }
+		    }
+        System.out.print(sum);
+	  }
+}
