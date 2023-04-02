@@ -3,8 +3,8 @@
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/107450834/229347095-1c76750c-6638-4eec-85af-6132ee90fd34.png">
 
 위에서부터
-1. array, BufferedReader, Stringbuilder, 향상된 for문
-2. array, BufferedReader, 향상된 for문
+1. array, BufferedReader, Stringbuilder, for문
+2. array, BufferedReader, for문
 3. BuffderedReader, Stringbuilder, Stack, 향상된 for문
 4. BuffderedReader, Stringbuilder, Stack, for문
 
