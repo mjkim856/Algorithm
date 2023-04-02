@@ -1,0 +1,62 @@
+3행 3열의 배열 두 개가 주어지면 두 배열의 같은 위치에 있는 숫자의 곱을 출력하는 프로그램을 작성해보세요.
+
+입력 형식
+3행 3열의 배열 두 개가 줄 간격을 사이에 두고 주어집니다.
+1 ≤ 배열 요소 범위 ≤ 100
+
+출력 형식
+주어진 두 배열의 곱을 3행 3열의 배열로 입출력 예제와 같이 출력합니다.
+
+입출력 예제
+예제1
+입력:
+1 2 3
+4 5 6
+7 8 9
+
+2 3 4
+5 6 7
+8 9 10
+
+출력:
+2 6 12 
+20 30 42
+56 72 90
+
+제한
+시간 제한: 1000ms
+메모리 제한: 80MB
+
+-
+
+import java.util.*;
+
+public class Main{
+	public static void main(String args[]){
+	    Scanner sc = new Scanner(System.in);
+
+        int arrt1[][] = new int[3][3];
+        int arrt2[][] = new int[3][3];  
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                arrt1[i][j] = sc.nextInt();
+            }
+        }
+
+        sc.nextLine();
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                arrt2[i][j] = sc.nextInt();
+            }
+        }               
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                System.out.print(arrt1[i][j] * arrt2[i][j] + " ");
+            }
+            System.out.println();
+        }  	    
+	  }
+}
