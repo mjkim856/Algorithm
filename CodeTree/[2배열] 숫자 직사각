@@ -1,0 +1,59 @@
+정수 n과 m의 값을 입력받아 숫자로 이루어진 직사각형을 출력하는 프로그램을 아래 예를 참고하여 작성해보세요. 단, 2차원 배열을 꼭 사용하여 해결해보세요.
+
+예)
+n에 3을 m에 5를 입력받는 경우
+
+1 2 3 4 5
+6 7 8 9 10
+11 12 13 14 15
+
+입력 형식
+첫 번째 줄에 세로변의 길이 n과, 가로변의 길이 m이 공백을 사이에 두고 주어집니다.
+1 ≤ n, m ≤ 100
+
+출력 형식
+주어지는 n과 m의 값에 따른 숫자를 입출력 예제와 같이 출력합니다.
+
+입출력 예제
+예제1
+입력:
+4 3
+
+출력:
+1 2 3
+4 5 6
+7 8 9
+10 11 12
+
+제한
+시간 제한: 1000ms
+메모리 제한: 80MB
+
+-
+
+import java.util.*;
+
+public class Main{
+	public static void main(String args[]) {
+	    Scanner sc = new Scanner(System.in);
+	    int a = sc.nextInt();
+		int b = sc.nextInt();
+		int num = 1;
+
+		int[][] arrt = new int[a][b];
+
+		for(int i = 0; i < a; i++) {
+			for(int j = 0; j < b; j++) {
+				arrt[i][j] = num;
+				num++;
+			}
+		}
+
+		for(int i = 0; i < a; i++) {
+			for(int j = 0; j < b; j++) {
+				System.out.print(arrt[i][j] + " ");				
+			}
+			System.out.println();
+		}	    
+	}
+}
