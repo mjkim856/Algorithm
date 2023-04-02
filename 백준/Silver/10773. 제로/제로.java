@@ -2,15 +2,15 @@
 가장 시간이 적게 걸린 건 두 번째 경우였으나, 전체적으로 봤을 때는 첫번째 경우가 가장 바람직(?) 했다.
 메모리가 가장 적게 사용되고, 시간은 두번째 경우와 4ms만 차이났음.
 
-array, BufferedReader, Stringbuilder, 향상된 for문  - 직접 자료구조 구현
-array, BufferedReader, 향상된 for문                 - 직접 자료구조 구현
+array, BufferedReader, Stringbuilder, for문  - 직접 자료구조 구현
+array, BufferedReader, for문                 - 직접 자료구조 구현
 BuffderedReader, Stringbuilder, Stack, 향상된 for문 - STACK 사용
 BuffderedReader, Stringbuilder, Stack, for문        - STACK 사용
 
 __________________________________________________________________________________
 
 
-array, BufferedReader, Stringbuilder, 향상된 for문  - 직접 자료구조 구현
+array, BufferedReader, Stringbuilder, for문  - 직접 자료구조 구현
 
 // stack 직접 구현하기
 import java.util.*;
@@ -49,7 +49,7 @@ class Main {
 
 __________________________________________________________________________________
 
-array, BufferedReader, 향상된 for문                 - 직접 자료구조 구현
+array, BufferedReader, for문                 - 직접 자료구조 구현
 
 // stack 직접 구현하기
 import java.util.*;
