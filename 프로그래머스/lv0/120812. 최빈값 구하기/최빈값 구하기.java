@@ -1,67 +1,40 @@
-모르겠다!!!
-    
 class Solution {
     public int solution(int[] array) {
+        
+        // 출력할 값
         int answer = 0; 
-        int[] ary = new int[1001]; //0<=array의 원소 <1000
+
+        // array의 원소를 count할 걸 담을 배열
+        // 왜 1001이냐면, 만약 array.length로 한다면 array 원소의 값이 array.length보다 클 경우엔 IndexOutOfBoundsException이 발생하기 때문이다.
+        int[] arr = new int[1001];
         
-        for (int i=0; i<array.length; i++){  // 원소 갯수 ary에 저장
-            ary[array[i]]++;
+        // 원소 갯수를 arr에 저장한다.
+        for(int i = 0; i < array.length; i++) {
+            arr[array[i]]++;
         }
         
-        int max = 0 ;  //최빈값의 갯수
-        int max_index = 0 ; //최빈값 
+        int max = 0;        // 최빈값 (정확히는 4가 3번 반복되었다면 3을 의미한다.)
+        int maxIdx = 0;     // 최빈값 인덱스 (위 예시에서 4를 의미한다.)
         
-        for (int i = 0; i<ary.length; i++){ //최빈값 구하기
-            if(ary[i]>max){
-                max = ary[i];
-                max_index = i;
+        for(int i = 0; i < arr.length; i++) {
+            // 만약 arr의 i번째 원소가 max보다 크다면 -> max에 arr[i]를 삽입하고, maxIdx에 i를 삽입한다.
+            if(arr[i] > max) {
+                max = arr[i];
+                maxIdx = i;
             }
         }
         
-        int count =0;
-        for (int i = 0; i<ary.length; i++){ //최빈값이 2개인지 학인
-            if(ary[i] == max) count++;
+        int cnt = 0;        // 최빈값이 중복인지 확인할 변수
+        for(int i = 0; i < arr.length; i++) {
+            // 만약 arr[i]와 max가 같다면 cnt++ 한다.
+            if(arr[i] == max) cnt++;
         }
         
-        if(count>1){            //최빈값이 2개이면-1 return 
-            return answer = -1;
-        }
+        // cnt가 1개 이상일 경우, 최빈값이 여러개이므로 -1을 return 한다. 
+        if(cnt > 1) return -1;
         
-        answer = max_index;
-        return answer;
-    }
-}
-
--
-
-import java.util.*;
-
-class Solution {
-    public int solution(int[] array) {
-        int maxCount = 0;
-        int answer = 0;
-
-        Map<Integer, Integer> map = new HashMap<>();
-
-        // getOrDefault : 찾는 키가 존재한다면 찾는 키의 값을 반환하고 없다면 기본 값을 반환하는 메서드
-        // getPrDefault(Object key, V DefaultValue)
-        // 매개변수 : 이 메서드는 두개의 매개변수를 허용
-        // key : 값을 가져와야 하는 요소의 키
-        // defaultValue : 지정된 키로 매핑된 값이 없는 경우 반환되어야 하는 기본값
-        // 반환값 : 찾는 key가 존재하면 해당 key에 매핑되어 있는 값을 반환하고, 그렇지 않으면 디폴트 값이 반환
-
-        for(int number : array) {
-            int count = map.getOrDefault(number, 0) + 1;
-            if(count > maxCount) {
-                maxCount = count;
-                answer = number;
-            } else if(count == maxCount) {
-                answer = -1;
-            }
-            map.put(number, count);
-        }
-
+        // 최빈값에 maxIdx를 넣고 출력한다.
+        answer = maxIdx;
         return answer;
     }
 }
