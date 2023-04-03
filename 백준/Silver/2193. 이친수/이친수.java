@@ -9,16 +9,13 @@ class Main {
     static long dp[] = new long[91];
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
         
         dp[0] = 0;
         dp[1] = 1;
         dp[2] = 1;
         
         int n = Integer.parseInt(br.readLine());
-        long pn = pn(n);
-        sb.append(pn);
-        System.out.println(sb);
+        System.out.println(pn(n));
     }
     
     public static long pn(int n) {
