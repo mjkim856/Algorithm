@@ -7,19 +7,12 @@ public class Main{
 	    Scanner sc = new Scanner(System.in);
 	    int a = sc.nextInt();
         
-        switch(a/10) {
-            case 10:
-            case 9: System.out.print("A");
-                break;
-            case 8: System.out.print("B");
-                break;
-            case 7: System.out.print("C");
-                break;
-            case 6: System.out.print("D");
-                break;
-            default: System.out.print("F");
-                break;
-        }
+        if(a/10 == 10 || a/10 == 9) System.out.print("A");
+        else if(a/10 == 8) System.out.print("B");
+        else if(a/10 == 7) System.out.print("C");
+        else if(a/10 == 6) System.out.print("D");
+        else System.out.print("F");
+
         sc.close();
 	}
 } 
