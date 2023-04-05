@@ -5,8 +5,8 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] arr = br.readLine().split("");
+        String str = br.readLine();
         int n = Integer.parseInt(br.readLine());
-        System.out.print(arr[n-1]);
+        System.out.print(str.charAt(n-1));
     }
 }
