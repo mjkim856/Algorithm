@@ -1,69 +1,46 @@
-// n장의 카드 중 3장을 골라 m과 가깝게 만드는 문제이다. 
-
 import java.util.*;
 import java.io.*;
 
 class Main {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-
-        String[] str = br.readLine().split(" ");
-        int n = Integer.parseInt(str[0]);
-        int m = Integer.parseInt(str[1]);
-        int[] arr = new int[n];
+        // 숫자 n과 m을 받는다.
+        String[] nm = br.readLine().split(" ");
+        int n = Integer.parseInt(nm[0]);
+        int m = Integer.parseInt(nm[1]);
         
+        // 배열을 만들고, 배열에 값을 넣는다.
         StringTokenizer st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
         for(int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         
-        // 배열의 0번째부터 시작한다.
-        // 카드 세 장을 뜻하는 int c1, c2, c3를 설정한다.
-        // c1 = 0, c2 = 1, c3 = 2부터 시작한다.
-        // c1 + c2 + c3의 값이 M 이하이면서 기존의 M보다 크다면 M에 넣는다.
-        // c3를 1씩 늘려서 length와 같아지면 
-        //    c2 + 1 한다.
-        //    c3 = c2+1 이다.
-        // 위 과정을 반복한다.
-        // 만약 c2 == c3가 된다면
-        //    c1 + 1 한다
-        //    c2 = c1 + 1 한다
-        //    c3 = c2 + 1 한다
-        // 위 과정을 반복한다.
-        // 만약 c1 == c3가 된다면
-        // 모든 합이 구해진 것이므로 M을 반환한다.
-        
-        int c1 = 0;
-        int c2 = 1;
-        int c3 = 2;
+        // search()의 반환값을 int max에 담는다.
+        int max = search(arr, n, m);
+        System.out.print(max);
+    }
+    
+    // 최댓값을 반환하기 위한 메소드 static int search() 를 선언한다.
+    static int search(int[] arr, int n, int m) {
+        // 최댓값을 넣을 max를 정의한다.
         int max = -1;
-        int l = arr.length;
-        
-        while(true) {
-            int sum = arr[c1] + arr[c2] + arr[c3];
-            if(sum > max && sum <= m) {
-                max = sum;
-            }
-            
-            c3++;
-            
-            if(c3 == l) {
-                c2 += 1;
-                c3 = c2 + 1;
-                if(c2 == (l-1)) {
-                    c1 += 1;
-                    c2 = c1 + 1;
-                    c3 = c2 + 1;
+        // 맨 처음은 n-2까지 반복한다. 시작값은 i=0이다.
+        for(int i = 0; i < n-2; i++) {
+            // 그 다음은 n-1까지 반복한다. 시작값은 j=i+1이다.
+            for(int j = i+1; j < n-1; j++) {
+                // 그 다음은 n까지 반복한다. 시작값은 k=j+1이다.
+                for(int k = j+1; k < n; k++) {
+                    // 임시로 합을 담을 변수 temp를 선언한다.
+                    int temp = arr[i] + arr[j] + arr[k];
+                    // 만약 temp = m인 경우, return한다.
+                    if(temp == m) return temp;
+                    // 만약 temp가 m 이하이면서 max보다 크다면 max를 갱신한다.
+                    if(temp < m && temp > max) max = temp;
                 }
             }
-
-            if(c1 == (l-2)) {
-                break;
-            }
         }
-        
-        sb.append(max);
-        System.out.print(sb);
+        // 모든 순회를 마치면 result를 리턴한다.
+        return max;
     }
 }
