@@ -5,7 +5,7 @@
 # 설명
 - 기간: 2023.03.13 ~
 - 사이트: BOJ, Programmers, SWEA, CodeTree
-- 언어: Java
+- 언어: Java, Python
 <br><br><br>
 
 # Todo
