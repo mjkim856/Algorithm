@@ -16,3 +16,6 @@ while True:
         else: print("%d is NOT perfect." % n)
     elif n == -1:
         break
+
+# 리스트의 요소를 더하는 건 sum(list_name) 으로도 할 수 있다.
+# 다만 초는 56ms로 이 코드(52ms)보다 느리게 나온당
